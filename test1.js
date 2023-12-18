@@ -37,7 +37,7 @@ class MyModel {
       return `<article class="car">
               <big><b>${this.name}</b></big>
               <p>OTR price starting from £${this.price}</p>
-              <a href="carMore.html"><img src="${this.img}" alt="mercedes-benz cars"></a>
+              <a href="carMore.html"><img src="${this.img}" alt="nissan cars"></a>
               <button>Test drive</button>
               </article>`;
     }
