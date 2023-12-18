@@ -222,9 +222,8 @@ grid болгож аваад 2 багананд хуваасан.*/
   border: none;
   font-size: 80%;
   font-weight: bolder;
-  background-color: var(--main-c-color);
-  color: #E5C899;
-  //*color: var(--main-bg-color);*//
+  background-color: beige; /*var(--main-c-color);*/
+  color: var(--main-bg-color);
   transition: background-color 0.5s;
 }
 
