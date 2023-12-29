@@ -694,62 +694,57 @@ button {
   color: var(--main-c-color);
   padding: 2%;
 }
-@media (max-width: 767px) {
- .info article {
-    padding-right: 0;
-    padding-left: 0;
- }
+@media screen and (max-width: 70em) {
 
- .info article h6 {
-    font-size: 120%;
- }
+  menu {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+  }
 
- .info article p {
-    font-size: 180%;
- }
+  .list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    justify-content: center;
+    width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+  }
 
- .info article p small {
-    font-size: 60%;
- }
-
- .similar-models {
-    grid-template-columns: 1fr;
- }
-
- .similar-models img {
-    height: 40vw;
- }
-
- .footer-group {
-    padding: 15px 20px;
- }
-
- .footer-group.h2 {
-    font-size: 20px;
- }
-
- .footer-group p {
-    font-size: 12px;
- }
-
- .footer.p {
-    font-size: 10px;
- }
-
- .footer.social.title {
-    font-size: 40px;
- }
-
- .footer.social.icons {
-    margin: 0 20% 0 20%;
- }
-
- .footer.social.svg.item {
-    padding-bottom: 50px;
-    width: 40px;
- }
-
- .footer.copyright {
+  .list li {
     padding: 2%;
- }
+  }
+
+  .navbar label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  header label {
+    margin: 30px;
+  }
+
+  header label svg {
+    fill: white;
+  }
+
+  #toggler:checked~menu {
+    max-height: 100%;
+  }
+}
+
+header input {
+  height: 0;
+}
+
+header label svg {
+  color: transparent;
+}
+
+header label {
+  height: 0;
 }
