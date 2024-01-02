@@ -1,12 +1,19 @@
+
 :root {
   --main-bg-color: black;
   --main-c-color: white;
   --main-input-color: 30, 30, 30;
 }
 
+.dark-theme{
+  --main-bg-color: white;
+  --main-c-color: black;
+}
+/*Body таг доторх бүх элементийн background color цагаан 
+ерөнхийд нь grid болгож өгсөн*/
 body {
   display: grid;
-  background-color: var(--main-bg-color);
+  background-color: black;
 }
 
 header {
@@ -19,12 +26,25 @@ header {
   z-index: 1;
 }
 
+/*Header таг доторх div тагны элементүүдийг 
+grid-template-columns: repeat ашиглан
+3 баганад хуваасан.*/
 header div {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background-color: var(--main-bg-color);
+  background-color: black;
 }
-
+/*Dark mode*/
+#icon{
+  width: 25px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-self: center;
+  margin-left: 20px;
+}
 .Logo img {
   width: 80px;
   height: auto;
@@ -36,6 +56,7 @@ header div {
   justify-self: center;
 }
 
+/*тухайн grid болсон хэсгийн 4 хуваасны 3 хэсэг дээр байршуул */
 .search {
   grid-column: 3 / 4;
   display: flex;
@@ -46,11 +67,13 @@ header div {
 }
 
 .search button {
-  background-color: var(--main-bg-color);
-  color: var(--main-c-color);
+  background-color: black;
+  color: white;
   margin-right: 30px;
 }
 
+/*search class дотор байгаа button-гууд hover 
+очиход доогуур нь зураас гардаг болгосон.*/
 .search button:hover {
   text-decoration: underline;
 }
@@ -62,13 +85,15 @@ header div {
   align-self: center;
   border-radius: 20px;
   padding: 10px;
-  background-color: var(--main-bg-color);
+  background-color: black;
   width: auto;
   margin-left: auto;
   margin-right: 20px;
   height: 30px;
 }
 
+/*search_input класс дотор байгаа элементүүдийн font
+size 12px болгосон ба 0.4с хугацаанд transition хийнэ.*/
 .search_input {
   background: none;
   padding: 10px;
@@ -88,10 +113,11 @@ header div {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--main-c-color);
+  color: white;
   transition: 0.4s;
   width: 40px;
 }
+
 
 .search_form:hover .search_input {
   width: 240px;
@@ -125,16 +151,18 @@ menu ul li:hover {
 menu ul li a {
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
-  color: var(--main-c-color);
+  color: white;
   font-size: 15px;
 }
 
 /* Main css */
+/*main таг-н элементүүдийг дээд талаасаа 4rem padding авсан.*/
 main {
   margin-top: 4rem;
 }
 
 /*----About us css----*/
+
 
 .about-us {
   margin-top: 115px;
@@ -162,6 +190,8 @@ grid болгож аваад 2 багананд хуваасан.*/
 
 .bigAdd {
   position: relative;
+  /*бусад элементээс үлдээсэн хоосон зайнд тохируулахгүй
+  мөн өөрчлөхгүйгээр одоогийн байрлалтай харьцангуй байрлуулна.*/
   text-align: left;
   z-index: 0;
   text-align: center;
@@ -169,6 +199,8 @@ grid болгож аваад 2 багананд хуваасан.*/
 
 .bigAdd h1 {
   position: absolute;
+  /*Өөрийн эцэг, эхийнхээ байршлыг харьцуулаад орчин
+  тойрны байрлалыг өөрчилдөг.*/
   bottom: 40%;
   left: 10%;
   font-size: 300%;
@@ -187,19 +219,22 @@ grid болгож аваад 2 багананд хуваасан.*/
   font-size: 80%;
   font-weight: bolder;
   background-color: beige; /*var(--main-c-color);*/
-  color: var(--main-bg-color);
+  color: black;
   transition: background-color 0.5s;
 }
 
+/*Button дээр хулгана очих үед арын өнгийг цагаан
+өөрийн өнгийг хар болгодог болгосон.*/
 .bigAdd button:hover {
   cursor: pointer;
-  background-color: var(--main-bg-color);
-  color: var(--main-c-color);
+  background-color: black;
+  color: white;
 }
 
+
 .content-new {
-  background-color: var(--main-bg-color);
-  color: var(--main-c-color);
+  background-color: black;
+  color: white;
 }
 
 .content-new a {
@@ -210,29 +245,27 @@ grid болгож аваад 2 багананд хуваасан.*/
   justify-content: center;
   align-items: center;
   margin-bottom: 3%;
-  color: var(--main-c-color);
+  color: white;
 }
 
 .content-why a {
   text-decoration: none;
-  /*ямар нэгэн чимгийг байхгүй болгоно. жишээ нь italic, underline гэх мэт*/
   font-size: large;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 3%;
-  color: var(--main-bg-color);
+  color: black;
 }
 
 .content-why {
-  background-color: var(--main-c-color);
+  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
 .content-new article {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -322,7 +355,7 @@ section article div p {
 }
 
 .article-A {
-  background-color: var(--main-c-color);
+  background-color: white;
 }
 
 .article-A img {
@@ -351,6 +384,7 @@ section article div p {
   padding: 5%;
 }
 
+/*Ерөнхий арын өнгө font зэргийг оноож өгсөн.*/
 p {
   font-family: 'Montserrat', sans-serif;
 }
@@ -360,7 +394,7 @@ p {
 }
 
 .black-p {
-  color: var(--main-bg-color);
+  color: black;
 }
 
 h2 {
@@ -377,10 +411,10 @@ h3 {
 
 button {
   font-family: 'Montserrat', sans-serif;
+  color: var(--main-bg-color);
 }
 
 /*Cars style*/
-
 .cars {
   background-color: var(--main-c-color);
   margin-top: 80px;
@@ -392,6 +426,7 @@ button {
   padding: 100px;
 }
 
+/*нэг мөрийг 3 багананад хуваасан. дээрээсээ 50px padding авсан.*/
 .models {
   grid-column: 1/3;
   grid-row: 1/1;
@@ -401,14 +436,18 @@ button {
 .types {
   grid-column: 1/1;
   align-self: start;
+  color:var(--main-bg-color);
 }
 
+/*mycars id-тай элементүүдийн баганы 3 хуваасны 2 хэсгээс байрлуулна. доторх 
+элементүүдийг 3 багананд хуваасан. Мөн зүү талаасаа 50px padding авсан.*/
 #mycars {
   grid-column: 2/3;
   display: grid;
   grid-template-columns: repeat(3, minmax(100px, 1fr));
   border-left: 1px solid #c1c1c1;
   padding-left: 50px;
+  color: var(--main-bg-color);
 }
 
 .carmodels {
@@ -442,6 +481,7 @@ button {
 .models h1 {
   font-size: 300%;
   font-weight: lighter;
+  color: var(--main-bg-color);
 }
 
 .modelbuttons {
@@ -462,11 +502,13 @@ button {
   box-shadow: 5px 5px 5px #999999;
 }
 
+/*modelbuttons класс дээр хулгана очиход арын өнгө өөрчлөгдсөн.*/
 .modelbuttons :hover {
   background-color: #eeeeee;
 }
 
 /*Services*/
+/*areas класс доторх элементүүдийг flex болгоод баганы дагуу байрлуулсан.*/
 .areas {
   display: flex;
   flex-direction: column;
@@ -545,7 +587,7 @@ button {
 
 .test button:hover {
   background-color: #525252;
-  color: white;
+  color: var(--main-c-color);
 }
 
 .test div {
@@ -558,7 +600,7 @@ button {
 }
 
 .subMenu ul li a {
-  color: var(--main-c-color);
+  color: white;
   text-decoration: none;
 }
 
@@ -578,7 +620,7 @@ button {
 
 /*Car More main*/
 .info {
-  color: var(--main-c-color);
+  color: white;
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -623,13 +665,14 @@ button {
 }
 
 /*--------------------------------------- Footer css -----------------------------------------*/
-
+/*footer хэсгийн өнгө болон тэнхлэгийг нь тодорхойлсон*/
 .footer {
   color: var(--main-c-color);
   display: flex;
   flex-direction: column;
 }
 
+/*техт зай, байршлыг нь заасан*/
 .footer-group {
   text-align: start;
   border: 1px solid #999999;
@@ -642,15 +685,18 @@ button {
   font-size: 22px;
 }
 
+/*техт мөрийн өндөр, хэмжээг заасан*/
 .footer-group p {
   font-size: 14px;
   line-height: 150%;
 }
 
+/*техт фонтыг хэмжээг зааж өгсөн*/
 .footer.p {
   font-size: 12px;
 }
 
+/*тест товчийн өнгө, фонт, хэмжээг тодорхойлсон*/
 .footer-group.button {
   background-color: var(--main-bg-color);
   color: var(--main-c-color);
@@ -669,6 +715,7 @@ button {
   text-align: center;
 }
 
+/*social хэсгийн дээд техтыг тодорхойлно*/
 .footer.social.title {
   text-align: center;
   font-size: 48px;
@@ -676,6 +723,7 @@ button {
   font-weight: bold;
 }
 
+/*social icon бүхэлд нь байршлыг заасан*/
 .footer.social.icons {
   flex-direction: row;
   justify-content: space-around;
@@ -683,17 +731,20 @@ button {
   flex-wrap: wrap;
 }
 
+/*social icon тус бүрд нь байршлыг заасан*/
 .footer.social.svg.item {
   padding-bottom: 50px;
   width: 40px
 }
 
+/*copyright техтыг тодорхойлсон*/
 .footer.copyright {
   font-size: 12px;
   text-align: start;
-  color: var(--main-c-color);
+  color: white;
   padding: 2%;
 }
+
 @media screen and (max-width: 70em) {
 
   menu {
