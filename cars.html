@@ -300,6 +300,61 @@
     </footer>
 <!--black mode-->
     <script src="dark.js"></script>
+    <!--Link-->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    var checkboxes = document.querySelectorAll('input[name="checkbox"]');
+    var articles = document.querySelectorAll('.city-grid article');
+    var urlParams = new URLSearchParams(window.location.search);
+    var initialModels = urlParams.getAll('models[]');
+
+    checkboxes.forEach(function (checkbox) {
+        if (initialModels.includes(checkbox.value)) {
+            checkbox.checked = true;
+        }
+    });
+
+    function updateUrlParams() {
+        var selectedModels = Array.from(document.querySelectorAll('input[name="checkbox"]:checked')).map(function (checkbox) {
+            return checkbox.value;
+        });
+        var url = new URL(window.location.href);
+        url.searchParams.delete('models[]'); // Clear existing model parameters
+        selectedModels.forEach(function (model) {
+            url.searchParams.append('models[]', model); // Append selected models
+        });
+        history.pushState({}, '', url);
+    }
+
+    function filterArticlesByModel(selectedModels) {
+        articles.forEach(function (article) {
+            var articleModel = article.dataset.model;
+
+            if (selectedModels.includes(articleModel) || selectedModels.length === 0) {
+                article.style.display = 'block';
+            } else {
+                article.style.display = 'none';
+            }
+        });
+    }
+
+    checkboxes.forEach(function (checkbox) {
+        checkbox.addEventListener('change', function () {
+            updateUrlParams();
+            var selectedModels = Array.from(document.querySelectorAll('input[name="checkbox"]:checked')).map(function (checkbox) {
+                return checkbox.value;
+            });
+            filterArticlesByModel(selectedModels);
+        });
+    });
+
+    // Initial filtering based on the selected models
+    var initialSelectedModels = Array.from(document.querySelectorAll('input[name="checkbox"]:checked')).map(function (checkbox) {
+        return checkbox.value;
+    });
+    filterArticlesByModel(initialSelectedModels);
+    });
+  </script>
   </body>
 </html>
 
