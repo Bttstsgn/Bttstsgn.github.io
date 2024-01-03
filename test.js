@@ -68,6 +68,6 @@ class MyModel {
   }
   const gebi = (id) => document.getElementById(id);
   const recentCars = new carModels(
-    'https://api.jsonbin.io/v3/b/637b3aab2b3499323b05e489'
+    'https://github.com/Bttstsgn/Bttstsgn.github.io/blob/main/api.json'
   );
   recentCars.Download('mycars');
