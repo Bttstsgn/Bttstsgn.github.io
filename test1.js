@@ -82,7 +82,7 @@ async function classifybyname(name){ //async-paralellaar dataga avna
                 }
             } else { //hooson bvl 
                 if(GeneralModel == "newmodel"){
-                        if(item.modelName == "Cabriolets") {
+                        if(item.modelName == "Electrics") {
                             item.cars.map(el=>{   
                                     lss.push(el);
                             })
