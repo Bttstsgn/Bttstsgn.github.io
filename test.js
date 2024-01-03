@@ -68,6 +68,6 @@ class MyModel {
   }
   const gebi = (id) => document.getElementById(id);
   const recentCars = new carModels(
-    'api.jsonbin.io/v3/b/6594b0addc746540188c2f1c'
+    'api.jsonbin.io/v3/b/637b3aab2b3499323b05e489'
   );
   recentCars.Download('mycars');
