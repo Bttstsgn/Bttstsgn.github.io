@@ -59,7 +59,7 @@ async function classifybyname(name){ //async-paralellaar dataga avna
       return modelNames + cars; // 1 model 3 car 
     };
     
-    const response = await fetch("https://maralaaback-i2rl.vercel.app/cardata"); //json ruuga handaad responce awna
+    const response = await fetch("https://jackback-hpgfwdly7-jacks-projects-f39d8784.vercel.app/"); //json ruuga handaad responce awna
     const result = await response.json();//json bolgono
     console.log(result); //console data garna
     const records = result;
