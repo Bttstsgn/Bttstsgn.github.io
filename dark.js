@@ -9,7 +9,6 @@ icon.onclick = function(){
     // dark theme bolson bol бол dursiig "assest/sun.png" bolgono
     icon.src="assest/sun.png";
   }else{
-    // esreg vyd "assest/moon.png" 
     icon.src="assest/moon.png";
   }
 }
